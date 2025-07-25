@@ -1,6 +1,6 @@
 # KapiWilq's `bracket.json` Generator
 
-It's a generator that generates!
+It's a generator that generates! Temporarily hosted here: https://kapiwilq.github.io/bracket/
 
 ## Introduction
 
