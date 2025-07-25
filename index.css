@@ -1,0 +1,338 @@
+@font-face {
+    src: url("static/Nunito.ttf");
+    font-family: "Nunito";
+    font-weight: 600;
+}
+
+@font-face {
+    src: url("static/Zondicons.ttf");
+    font-family: "Zondicons";
+}
+
+:root {
+    --nord-0: #2e3440;
+    --nord-1: #3b4252;
+    --nord-2: #434c5e;
+    --nord-3: #4c566a;
+    --nord-6: #eceff4;
+    --nord-8: #88c0d0;
+    --nord-10: #5e81ac;
+    --nord-11: #bf616a;
+    --nord-13: #ebcb8b;
+    --nord-14: #a3be8c;
+    --color-disabled: #808080;
+    --color-text: var(--nord-6);
+}
+
+* {
+    -webkit-user-select: none;
+    user-select: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: var(--nord-0);
+    font-family: "Nunito", sans-serif;
+    color: var(--color-text);
+}
+
+a {
+    color: var(--nord-10);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--nord-8);
+}
+
+dialog {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.5rem;
+    background-color: var(--nord-1);
+    border: none;
+    border-radius: 1rem;
+    color: var(--color-text);
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+dialog>div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 65rem;
+}
+
+div.kwbg-dialog-title {
+    width: 100%;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-disabled);
+    font-size: 2em;
+    text-align: center;
+}
+
+div.kwbg-dialog-content {
+    padding: 0.5rem;
+    font-size: 1.2em;
+}
+
+ul {
+    padding: 0 1em;
+}
+
+form,
+label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+button {
+    padding: 0.5rem;
+    background-color: var(--nord-2);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.5em;
+    font-family: inherit;
+    color: var(--color-text);
+}
+
+button.kwbg-dialog-upload-button {
+    font-size: 1em;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+button:enabled:hover {
+    background-color: var(--nord-3);
+}
+
+button:disabled {
+    cursor: not-allowed;
+    color: var(--color-disabled);
+}
+
+button.kwbg-button-imported {
+    background-color: var(--nord-14);
+    color: var(--nord-0);
+}
+
+button.kwbg-button-failed {
+    background-color: var(--nord-11);
+    color: var(--nord-0);
+}
+
+button.kwbg-button-imported:hover,
+button.kwbg-button-failed:hover {
+    background-color: var(--color-text);
+}
+
+div.kwbg-dialog-upload-status {
+    padding-top: 0.5rem;
+    text-align: center;
+}
+
+div.kwbg-dialog-upload-status:empty {
+    display: none;
+}
+
+div.kwbg-dialog-footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--color-disabled);
+}
+
+div.kwbg-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vh;
+    max-width: 100vh;
+    height: 100vh;
+    min-height: 100vh;
+    margin: 0 0.5rem;
+}
+
+div.kwbg-title {
+    font-size: 2em;
+}
+
+div.kwbg-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1 0 auto;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--nord-1);
+    border-radius: 1rem;
+    text-align: center;
+}
+
+
+div.kwbg-main>div {
+    width: 100%;
+    max-width: 100%;
+}
+
+div.kwbg-title,
+div.kwbg-footer {
+    flex: 0 0 auto;
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+div.kwbg-main-header {
+    font-size: 2em;
+}
+
+div.kwbg-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1 0 auto;
+}
+
+div.kwbg-row {
+    display: grid;
+    justify-content: left;
+    align-items: center;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    height: 2.6875rem;
+    font-size: 1.25em;
+}
+
+div.kwbg-row>* {
+    width: 100%;
+    text-align: left;
+}
+
+select,
+::picker(select) {
+    /* appearance: base-select; */
+    font-family: inherit;
+    color: var(--color-text);
+}
+
+select {
+    padding: 0.5rem;
+    background-color: var(--nord-2);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: inherit;
+    font-family: inherit;
+    color: var(--color-text);
+    white-space: pre;
+}
+
+select:disabled {
+    cursor: not-allowed;
+    color: var(--color-disabled);
+}
+
+select:enabled:hover {
+    background-color: var(--nord-3);
+}
+
+::picker(select) {
+    margin-top: 0.5rem;
+    border: 0.0625em solid var(--nord-10);
+    border-radius: inherit;
+}
+
+select.kwbg-dialog-round-select::picker(select) {
+    left: -33rem;
+}
+
+select::picker-icon {
+    content: "\e901";
+    margin-top: 0.1875em;
+    font-family: "Zondicons";
+    color: var(--color-text);
+    vertical-align: middle;
+}
+
+select:open::picker-icon {
+    content: "\e902";
+}
+
+select:disabled::picker-icon {
+    color: var(--color-disabled);
+}
+
+option {
+    padding: 0.5rem;
+    background-color: var(--nord-2);
+}
+
+option:hover {
+    background-color: var(--color-text);
+    color: var(--nord-0);
+}
+
+option::checkmark {
+    display: none;
+}
+
+input[type="checkbox"] {
+    justify-self: start;
+    appearance: none;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    width: 2.6875rem;
+    height: 2.6875rem;
+    background-color: var(--nord-2);
+    border: none;
+    border-radius: 0.5rem;
+}
+
+input[type="checkbox"]:hover {
+    background-color: var(--nord-3);
+}
+
+input[type="checkbox"]:checked::before {
+    content: "\e900";
+    border-radius: 0.5rem;
+    font-family: "Zondicons";
+    color: var(--color-text);
+    font-size: 2em;
+}
+
+div.kwbg-upload-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0.5rem;
+}
+
+textarea {
+    resize: none;
+    flex: 1 0 auto;
+    padding: 0.5rem;
+    background-color: var(--nord-2);
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--color-text);
+}
+
+div.kwbg-footer {
+    font-size: 1.5em;
+}

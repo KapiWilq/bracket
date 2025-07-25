@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>KapiWilq's bracket.json Generator</title>
+</head>
+
+<body>
+    <dialog>
+        <!-- Everything is wrapped inside a div to allow proper layouting -->
+        <div>
+            <div class="kwbg-dialog-title">Dialog Title</div>
+            <div class="kwbg-dialog-content">
+                Accepted file formats: <code>.csv</code>, <code>.tsv</code><br><br>
+                File(-s) requirements:<br>
+                <ul class="kwbg-dialog-requirements"></ul>
+                <label for="kwbg-dialog-round-select">
+                    <br>
+                    <div>Select Round:</div>
+                    <select name="kwbg-dialog-round-select" class="kwbg-dialog-round-select"></select>
+                </label><br>
+                <form class="kwbg-dialog-form">
+                    <button type="button" class="kwbg-dialog-upload-button-helper kwbg-dialog-upload-button">Upload Helper File...</button>
+                    <input type="file" name="kwbg-dialog-upload-input-helper" class="kwbg-dialog-upload-input-helper">
+                    <button type="button" class="kwbg-dialog-upload-button-main kwbg-dialog-upload-button">Upload Main File...</button>
+                    <input type="file" name="kwbg-dialog-upload-input-main" class="kwbg-dialog-upload-input-main">
+                </form>
+                <div class="kwbg-dialog-upload-status"></div>
+            </div>
+            <div class="kwbg-dialog-footer">
+                <button type="button" id="kwbg-dialog-close">Close</button>
+            </div>
+        </div>
+    </dialog>
+    <div class="kwbg-container">
+        <div class="kwbg-title">KapiWilq's bracket.json Generator</div>
+        <div class="kwbg-main">
+            <div class="kwbg-main-header">Temporarily on GitHub Pages!</div>
+            <div class="kwbg-main-content">
+                <div class="kwbg-row">
+                    <div>Ruleset</div>
+                    <select class="kwbg-ruleset">
+                        <option value="osu">osu!</option>
+                        <option value="taiko">osu!taiko</option>
+                        <option value="fruits">osu!catch</option>
+                        <option value="mania">osu!mania</option>
+                    </select>
+                </div>
+                <div class="kwbg-row">
+                    <div>Tournament Type</div>
+                    <select class="kwbg-tourney-type">
+                        <option value="single">Single Elimination (no losers' bracket)</option>
+                        <option value="double">Double Elimination (yes losers' bracket)</option>
+                    </select>
+                </div>
+                <div class="kwbg-row kwbg-third-place-match-setting">
+                    <div>Include a Match for 3rd Place</div>
+                    <input type="checkbox" name="kwbg-third-place-match" class="kwbg-third-place-match">
+                </div>
+                <div class="kwbg-row">
+                    <div>First Round</div>
+                    <select class="kwbg-first-round" disabled="disabled">
+                        <option value="0">&lt;upload teams first&gt;</option>
+                    </select>
+                </div>
+                <div class="kwbg-upload-buttons">
+                    <button type="button" class="kwbg-button-teams">Teams</button>
+                    <button type="button" class="kwbg-button-seedings" disabled="disabled">Seedings</button>
+                    <button type="button" class="kwbg-button-matches" disabled="disabled">Initial Matches</button>
+                    <button type="button" class="kwbg-button-mappool" disabled="disabled">Mappool</button>
+                </div>
+                <textarea class="kwbg-output" name="kwbg-output" readonly="readonly"></textarea>
+            </div>
+        </div>
+        <div class="kwbg-footer">Footer &bull; <a href="https://github.com/KapiWilq/bracket" target="_blank" rel="noopener noreferrer">Source Code</a></div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
