@@ -4,7 +4,7 @@ It's a generator that generates! Temporarily hosted here: https://kapiwilq.githu
 
 ## Introduction
 
-This project allows to create a fully featured `bracket.json` file for the [osu!tournament client](https://osu.ppy.sh/wiki/en/osu%21_tournament_client) (commonly known as the osu!(lazer) tournament client) using a graphical interface without downloading any applications. It is capable of generating brackets of various sizes (based on the list of teams), populate the seedings for every team (supports every winning condition!), add matches for the first round, and add mappools for each round.
+This project allows to create a complete `bracket.json` file for the [osu!tournament client](https://osu.ppy.sh/wiki/en/osu%21_tournament_client) (commonly known as the osu!(lazer) tournament client) using a graphical interface without downloading any applications. It is capable of generating brackets of various sizes (based on the list of teams), populate the seedings for every team (supports every winning condition!), add matches for the first round, and add mappools for each round.
 
 ## Video Tutorial
 
